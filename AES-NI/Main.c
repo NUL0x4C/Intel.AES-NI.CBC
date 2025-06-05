@@ -8,10 +8,10 @@
 
 
 static const unsigned char	g_PlainText[]	=	"\tThis is a test of AES encryption using AES-NI intrinsics.\n"
-												"\tThe (V)PSRLW instruction shifts each of the words in the destination operand to the right by the number of bits.\n"
-												"\tspecified in the count operand; the(V)PSRLD instruction shifts each of the doublewords in the destination operand.\n"
-												"\tand the PSRLQ instruction shifts the quadword(or quadwords) in the destination operand.\n"
-												"\tVol. 2B 4-459\n";
+							"\tThe (V)PSRLW instruction shifts each of the words in the destination operand to the right by the number of bits.\n"
+							"\tspecified in the count operand; the(V)PSRLD instruction shifts each of the doublewords in the destination operand.\n"
+							"\tand the PSRLQ instruction shifts the quadword(or quadwords) in the destination operand.\n"
+							"\tVol. 2B 4-459\n";
 
 static unsigned char		g_AesKey[]		= {
 	0x01, 0x57, 0xBB, 0xC8, 0x8F, 0x49, 0x1E, 0x6A, 0x6A, 0xA5, 0xF9, 0x8C, 0x11, 0x40, 0x19, 0x2D,
@@ -28,12 +28,12 @@ static unsigned char		g_AesIv[]		= {
 int main() { 
 
 
-	unsigned char*		pCipherText			= NULL;
+	unsigned char*		pCipherText		= NULL;
 	unsigned char*		pPaddedPlainText	= NULL;
-	unsigned char*		pPlainText			= NULL;
+	unsigned char*		pPlainText		= NULL;
 	unsigned __int64	uPlainTextSize		= (strlen((char*)g_PlainText) + 15) & ~(size_t)0x0F;			// multiple of 16
-	unsigned char 		bEncrypted			= FALSE;
-	unsigned char 		bDecrypted			= FALSE;
+	unsigned char 		bEncrypted		= FALSE;
+	unsigned char 		bDecrypted		= FALSE;
 
 
 	if (!(pPaddedPlainText = (unsigned char*)malloc(uPlainTextSize)))
